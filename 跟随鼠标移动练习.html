@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 150px;
+            height: 150px;
+            background-color: #bfa;
+            position: absolute;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            var box1=document.getElementById("box1");
+            document.onmousemove=function(e){
+                e=e||window.e;
+                var left=e.clientX;//e.pagex
+                var top=e.clientY;//e.pagey
+                var st=document.body.scrollTop||document.documentElement.scrollTop;
+                var sc=document.body.scrollLeft||document.documentElement.scrollLeft;
+
+                box1.style.left=left+sc+"px";
+                box1.style.top=top+st+"px";
+            }
+        }
+    </script>
+</head>
+<body style="height: 1000px;">
+    <div id="box1"></div>
+</body>
+</html>
